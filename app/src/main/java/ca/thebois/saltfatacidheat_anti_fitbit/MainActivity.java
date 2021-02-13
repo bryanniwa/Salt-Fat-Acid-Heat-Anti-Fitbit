@@ -12,6 +12,8 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+        });
+
+        Button button = findViewById(R.id.test_btn);
+        button.setOnClickListener((listener) -> {
+            Toast.makeText(this, "you clicked me!", Toast.LENGTH_SHORT)
+                .show();
         });
     }
 
