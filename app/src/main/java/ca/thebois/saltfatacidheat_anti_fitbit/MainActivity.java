@@ -56,12 +56,6 @@ public class MainActivity extends AppCompatActivity implements
             startActivity(i);
         });
 
-        ProgressBar caloriesBar = findViewById(R.id.progressBar_calories);
-        caloriesBar.setOnClickListener(v -> {
-            Intent i = FoodLogActivity.makeLaunchIntent(this);
-            startActivity(i);
-        });
-
         activityTrackingEnabled = false;
 
         populateTransitionList();
