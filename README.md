@@ -12,4 +12,4 @@ Get Notifications when you are being too active and make sure to hit your daily 
 
 Will need to be run on a physical device see attached video.
 
-![](https://github.com/bryanniwa/Salt-Fat-Acid-Heat-Anti-Fitbit/blob/main/New%20video.mp4)
+https://github.com/bryanniwa/Salt-Fat-Acid-Heat-Anti-Fitbit/blob/main/New%20video.mp4
