@@ -14,4 +14,6 @@
     <string name="meal">Meal</string>
     <string name="calories">Calories</string>
     <string name="date">Date</string>
+    <string name="line_1">Line 1</string>
+    <string name="line_2">Line 2</string>
 </resources>
