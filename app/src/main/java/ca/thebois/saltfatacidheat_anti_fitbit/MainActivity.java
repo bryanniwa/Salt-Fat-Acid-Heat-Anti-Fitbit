@@ -37,6 +37,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.thebois.saltfatacidheat_anti_fitbit.Model.MealManager;
+
 public class MainActivity extends AppCompatActivity implements
         ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements
     private PendingIntent activityTransitionPendingIntent;
     private TransitionsReceiver transitionsReceiver;
     private final int PERMISSION_REQUEST_ACTIVITY_RECOGNITION = 45;
+
+    private ProgressBar caloriesBar;
+    private final int CALORIES_GOAL = 3000;
+    private MealManager manager = MealManager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements
         if (activityRecognitionPermissionApproved()) {
             enableActivityTransitions();
         }
+
+        caloriesBar = findViewById(R.id.progressBar_calories);
     }
 
     private void getPermissionsIfNotGranted() {
@@ -215,5 +223,14 @@ public class MainActivity extends AppCompatActivity implements
     protected void onStop() {
         unregisterReceiver(transitionsReceiver);
         super.onStop();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        float totalCalories = (float) manager.getTotalCalories() / (float) CALORIES_GOAL;
+
+        caloriesBar.setProgress((int)(totalCalories*100));
     }
 }
