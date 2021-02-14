@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MealManager {
     private final List<Meal> meals = new ArrayList<>();
-    private int totalCalories;
+    private int totalCalories = 0;
 
     private static MealManager instance;
     private MealManager() {
@@ -20,6 +20,11 @@ public class MealManager {
 
     public void addMeal(Meal meal) {
         meals.add(meal);
+        totalCalories += meal.getCalories();
+    }
+
+    public int getTotalCalories() {
+        return totalCalories;
     }
 
     public List<Meal> getMeals() {
