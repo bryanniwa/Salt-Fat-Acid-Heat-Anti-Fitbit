@@ -3,6 +3,7 @@ package ca.thebois.saltfatacidheat_anti_fitbit;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.DialogFragment;
 
 import android.view.LayoutInflater;
@@ -53,6 +55,12 @@ public class AddMealActivity extends AppCompatActivity implements TimePickerDial
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
         }
+
+        ConstraintLayout constraintLayout = findViewById(R.id.add_meal_layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
 
         mealManager = MealManager.getInstance();
 
