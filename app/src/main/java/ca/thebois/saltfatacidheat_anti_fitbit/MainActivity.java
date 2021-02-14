@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        Button button = findViewById(R.id.test_btn);
-        button.setOnClickListener(v -> {
+        ProgressBar caloriesBar = findViewById(R.id.progressBar_calories);
+        caloriesBar.setOnClickListener(v -> {
             Intent i = FoodLogActivity.makeLaunchIntent(this);
             startActivity(i);
         });
